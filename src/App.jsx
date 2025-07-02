@@ -4,10 +4,12 @@ import AdminPage from './pages/admin/adminPage';
 import HomePage from './pages/admin/home/homePage';
 import Testing from './components/testing';
 import LoginPage from './pages/login/login';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-right" />
     <Routes path="/*">
       <Route path="/testing" element={<Testing />} />
        <Route path="/login" element={<LoginPage />} />
