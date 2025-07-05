@@ -12,7 +12,7 @@ function App() {
     <Toaster position="top-right" />
     <Routes path="/*">
       <Route path="/testing" element={<Testing />} />
-       <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/admin/*" element={<AdminPage/>} />
       <Route path="/*" element={<HomePage/>} />
     </Routes>
