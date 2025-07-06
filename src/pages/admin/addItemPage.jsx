@@ -91,7 +91,7 @@ export default function AddItemsPage() {
           onChange={(e) => setProductDimensions(e.target.value)}
         />
 
-        <input
+        <textarea
           type="text"
           placeholder="Product Description"
           className="w-full p-2 border rounded"

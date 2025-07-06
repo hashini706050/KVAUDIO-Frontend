@@ -19,16 +19,15 @@ export default function UpdateItemsPage() {
   const [productDescription, setProductDescription] = useState(location.state.description);
   const navigate = useNavigate()
   
-  async function handleAddItem(){
+  async function handleUpdateItem(){
     console.log(productKey,productName,price,productCategory,productDimensions,productDescription)
 
     const token = localStorage.getItem("token")
 
     if(token){
       try{
-      const result = await axios.put("http://localhost:3004/products"+productKey,
+      const result = await axios.put(`http://localhost:3004/products/${productKey}`,
        {
-        key : productKey,
         name : productName,
         price : price,
         category : productCategory,
@@ -98,7 +97,7 @@ export default function UpdateItemsPage() {
           onChange={(e) => setProductDimensions(e.target.value)}
         />
 
-        <input
+        <textarea
           type="text"
           placeholder="Product Description"
           className="w-full p-2 border rounded"
@@ -106,8 +105,8 @@ export default function UpdateItemsPage() {
           onChange={(e) => setProductDescription(e.target.value)}
         />
 
-        <button onClick={handleAddItem} className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
-          Add
+        <button onClick={handleUpdateItem} className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
+          Update
         </button>
         <button onClick={ () => {
           navigate("/admin/items")
