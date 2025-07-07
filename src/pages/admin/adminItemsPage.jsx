@@ -18,7 +18,7 @@ export default function AdminItemsPage() {
       return;
     }
 
-    axios.get("http://localhost:3004/products", {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/products`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -39,7 +39,7 @@ export default function AdminItemsPage() {
     const token = localStorage.getItem("token");
 
     if (window.confirm("Are you sure you want to delete this item?")) {
-      axios.delete(`http://localhost:3004/products/${key}`, {
+      axios.delete(`${import.meta.env.VITE_BACKEND_URL}/products/${key}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

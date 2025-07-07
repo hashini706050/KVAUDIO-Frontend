@@ -14,7 +14,9 @@ export default function LoginPage(){
        e.preventDefault()
        console.log(email, password)
 
-       axios.post("http://localhost:3004/users/login",
+       const backendurl=import.meta.env.VITE_BACKEND_URL
+
+       axios.post(`${backendurl}/users/login`,
         {
             email : email,
             password : password
