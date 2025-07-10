@@ -37,7 +37,7 @@ export default function Items() {
             state=="loading" && 
             <div className="w-full h-full flex justify-center items-center">
                 <div className="w-[50px] h-[50px] border-4 rounded-full border-t-green-500 animate-spin"></div>
-            </div>
+            </div> 
 
           }
           {
