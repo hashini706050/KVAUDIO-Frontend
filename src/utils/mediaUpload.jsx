@@ -6,8 +6,13 @@ const supabase_url="https://fylzesoawvijbtxnvkwy.supabase.co"
 const supabase = createClient(supabase_url, anon_key)
 
 export default function mediaUpload(file){
-    const names = file.name.split(".");
-    const timeStamp = new Date().getTime();
+
+    return new Promise((resolve, reject)=>{
+
+    if(file == null){
+        reject("No file selected")
+    }
+        const timeStamp = new Date().getTime();
     const fileName = timeStamp+file.name
 
     supabase.storage.from("images").upload(`${fileName}`,file, {
@@ -15,6 +20,12 @@ export default function mediaUpload(file){
         upsert: false,
     }).then((res)=>{
         const publicUrl = supabase.storage.from("images").getPublicUrl(fileName).data.publicUrl;
-        console.log(publicUrl)
+        resolve(publicUrl)
+    }).catch(()=>{
+        reject("Error uploading file")
     })
+
+    });
+
+    
 }

@@ -6,8 +6,10 @@ export default function Testing(){
     const[file, setFile] = useState(null);
 
     function uploadFile(){
-            console.log(file)
-            mediaUpload(file) 
+            console.log(file.name)
+            mediaUpload(file).then((url)=>{
+                console.log(url)
+            })
     }
 
     return(
