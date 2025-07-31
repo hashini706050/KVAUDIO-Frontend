@@ -13,7 +13,7 @@ export default function BookingPage(){
     return(
         <div className="w-full h-full flex flex-col items-center p-4" >
             <h1 className="text-xl fond-bold mb-4">Create Booking Page</h1>
-            <div className="bg-red-400 w-full flex flex-col items-start space-y-2">
+            <div className="w-full flex flex-col items-start space-y-2">
                 {
                     cart.orderedItems.map((item)=>{
                         return <BookingItem itemKey={item.key} key={item.key} qty={item.qty} refresh={reloadCart}/>
