@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../../components/header";
 import ImageSlider from "../../components/imageSlider";
 import { addToCart, loadCart } from "../../utils/cart";
+import toast from "react-hot-toast";
 
 export default function ProductOverview(){
 
@@ -56,6 +57,7 @@ export default function ProductOverview(){
                 </div> 
                 <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md" onClick={()=>{
                   addToCart(product.key, 1);
+                  toast.success("Successfully added to cart")
                   console.log(loadCart());
                 }}>
                   Add to Cart
