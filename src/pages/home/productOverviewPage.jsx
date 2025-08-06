@@ -36,7 +36,7 @@ export default function ProductOverview(){
   return (
   <>
     <Header />
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen flex flex-col items-center justify-center">
       {loadingStatus === "loading" && (
         <div className="w-[100px] h-[100px] border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
       )}
